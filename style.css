@@ -1,0 +1,170 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ html, body{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(17, 17, 27),rgb(34, 34, 34), rgb(17, 17, 17));
+    background-repeat: no-repeat;
+}
+
+#title-page {
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(208, 199, 199);
+}
+
+/* <div class="slider">
+    <ul class="slider-list">
+        <!-- jQuery -->
+        <li class="movie-slide slide1">
+            <p>The Good, the Bad and the Ugly</p>
+            <img src="https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg">
+        </li>
+        <li class="movie-slide slide2">
+            <p>The Good, the Bad and the Ugly</p>
+            <img src="https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg">
+        </li>
+        <li class="movie-slide slide3">
+            <p>The Good, the Bad and the Ugly</p>
+            <img src="https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg">
+        </li>
+    </ul>
+
+    <div class="btn-change-slides">
+        <button class="prev"><</button>
+        <button class="next">></button>
+    </div>
+</div>
+
+
+<div class="spoiler-section">
+    <h3 class="" id="h3-spoiler"></h3>
+    <button id="btn-spoiler">Show spoiler</button>
+    <p id="p-spoiler"></p>
+</div> */
+
+.slider {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    background-color: rebeccapurple;
+    align-items: center;
+}
+
+.slider-list {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slides */
+.movie-slide {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    opacity: 0.5;
+    color: gainsboro;
+    width: 25%;
+}
+.movie-slide p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.movie-slide img {
+    width: 125px;
+}
+
+
+/* The important slide !!! */
+.slide2 {
+    width: 50%;
+    opacity: 1;
+}
+.slide2 p {
+    font-size: 20px;
+}
+.slide2 img {
+    width: 225px;
+}
+
+
+
+
+.change-slides {
+    position: absolute;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: none;
+    font-size: 24px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.change-slides:hover {
+    background-color: cadetblue;
+}
+
+
+#prev {
+    left: 50px;
+}
+
+#next {
+    right: 50px;
+}
+
+
+
+
+
+
+
+.spoiler-section {
+    margin: 60px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    color: rgb(198, 198, 198);
+    font-size: 18px;
+}
+#span-spoiler {
+    color: rgb(248, 191, 47);
+    font-size: 22px;
+}
+
+#btn-spoiler {
+    margin: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 25px;
+    background-color: goldenrod;
+    color: rgb(23, 38, 38);
+    cursor: pointer;
+}
+#btn-spoiler:hover {
+    background-color: rgb(106, 77, 5);
+    color: rgb(101, 128, 128);
+}
+
+#p-spoiler {
+    width: 60%;
+    line-height: 150%;
+    text-align: justify;
+}
+
