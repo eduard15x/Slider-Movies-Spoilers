@@ -16,37 +16,6 @@
     padding-top: 5px;
     color: gainsboro;
 }
-
-/* <div class="slider">
-    <ul class="slider-list">
-        <!-- jQuery -->
-        <li class="movie-slide slide1">
-            <p>The Good, the Bad and the Ugly</p>
-            <img src="https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg">
-        </li>
-        <li class="movie-slide slide2">
-            <p>The Good, the Bad and the Ugly</p>
-            <img src="https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg">
-        </li>
-        <li class="movie-slide slide3">
-            <p>The Good, the Bad and the Ugly</p>
-            <img src="https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg">
-        </li>
-    </ul>
-
-    <div class="btn-change-slides">
-        <button class="prev"><</button>
-        <button class="next">></button>
-    </div>
-</div>
-
-
-<div class="spoiler-section">
-    <h3 class="" id="h3-spoiler"></h3>
-    <button id="btn-spoiler">Show spoiler</button>
-    <p id="p-spoiler"></p>
-</div> */
-
 .slider {
     width: 70%;
     margin: auto;
@@ -131,8 +100,6 @@
 
 
 
-
-
 .spoiler-section {
     margin-top: 45px;
     display: flex;
@@ -156,10 +123,11 @@
     background-color: #e27324;
     color: #262626;
     cursor: pointer;
+    transition: all 2s ease-out;
 }
 #btn-spoiler:hover {
-    background-color: #eb9423;
-    color: #242424;
+    background-color: #170e02;
+    color: #e27324;
 }
 
 #p-spoiler {

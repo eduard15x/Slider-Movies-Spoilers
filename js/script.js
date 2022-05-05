@@ -146,7 +146,141 @@
 
 
 
-// $.getJSON ( 'js/movies.json', (items)=> {
-//         console.log(items[1].title)
-//         console.log($(items))
-// })
+
+
+
+
+
+
+
+
+
+
+
+// <div class="slider">
+//         <ul class="slider-list">
+//             <!-- jQuery -->
+//             <li class="movie-slide slide1">
+//                 <p>The Good, the Bad and the Ugly</p>
+//                 <img src="https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg">
+//             </li>
+//             <li class="movie-slide slide2">
+//                 <p>The Good, the Bad and the Ugly</p>
+//                 <p id="imbd-rating">IMBD Rating - 9.5</p>
+//                 <img src="https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg">
+//             </li>
+//             <li class="movie-slide slide3">
+//                 <p>The Good, the Bad and the Ugly</p>
+//                 <img src="https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg">
+//             </li>
+//          </ul>
+
+//         <button id="prev" class="change-slides"> <i class="fa-solid fa-arrow-left"></i> </button>
+//         <button id="next" class="change-slides"> <i class="fa-solid fa-arrow-right"></i> </button>
+//</div>
+
+
+//     <div class="spoiler-section">
+//         <h3 class="" id="h3-spoiler">Click the buttom to see the spoiler for <span id="current-movie">Good and the bad guy</span> </h3>
+//         <button id="btn-spoiler"> <i class="fa-solid fa-arrow-down"></i> Show spoiler <i class="fa-solid fa-arrow-down"></i> </button>
+//         <p id="p-spoiler">The “twist” ending is a happy one, of course. In this alternate universe, Tate gets to raise her child; her friends will enjoy long lives; Hollywood’s innocence won’t be shattered, at least for a while longer. Plus, we all were treated to the singular catharsis of watching the brutality that the Manson crew became synonymous with get turned back around on them.</p>
+//     </div>
+
+
+
+
+const ulSliderList = document.querySelector('.slider-list')
+const prevBtn = document.querySelector('#prev')
+const nextBtn = document.querySelector('#next')
+
+const spanCurrentMovieName = document.querySelector('#current-movie')
+const btnShowSpoiler = document.querySelector('#btn-spoiler')
+const spoilerText = document.querySelector('#p-spoiler')
+
+spoilerText.style.display = 'none'
+let newArr = []
+
+$.getJSON( 'js/movies.json', (movies) => {
+
+    
+
+    movies.unshift(movies[movies.length - 1])
+    movies.push(movies[1])
+
+    // console.log(movies[1])
+    // console.log(movies)
+    // console.log(movies.length)
+
+    let index = 0
+    newArr = movies
+    // console.log('edi')
+    console.log(newArr)
+
+
+    function displayMoviesSlides() {
+        for ( let i = index; i < index+3; i ++) {
+            ulSliderList.innerHTML += 
+            `
+            <li class="movie-slide">
+                <p>${newArr[i].title}</p>
+                <img src="${newArr[i].imgSrc}" alt="${newArr[i].imgSrc}">
+            </li>
+            `
+        }
+        //add class style for center movie
+        let li = document.querySelectorAll('li')
+        li[1].classList.add('slide2')
+    }
+    displayMoviesSlides()
+    showSpoiler()
+
+    
+
+    prevBtn.addEventListener('click', () => {
+        console.log(index)
+        index --
+        console.log(index)
+        if ( index === -1) {
+            index = 9
+        }
+        console.log(index)
+        ulSliderList.innerHTML = ''
+        displayMoviesSlides()
+        spoilerText.style.display = 'none'
+    })
+
+    nextBtn.addEventListener('click', () => {
+        index++
+        if ( index === 10) {
+            index = 0
+        }
+        ulSliderList.innerHTML = ''
+        displayMoviesSlides()
+        spoilerText.style.display = 'none'        
+    })
+
+
+
+    function showSpoiler() {
+        btnShowSpoiler.addEventListener('click', () => {
+            spoilerText.textContent = `${newArr[index+1].spoiler}`;
+            spoilerText.style.display = 'block'
+        })
+    }
+
+
+
+})
+
+
+let a 
+function bar(b) {
+    console.log(a)
+}
+function foo(){
+    const a = 7 
+    bar(9)
+}
+
+console.log(foo())
+
