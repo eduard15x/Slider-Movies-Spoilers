@@ -76,6 +76,7 @@ $.getJSON( 'js/movies.json', (movies) => {
         ulSliderList.innerHTML = ''
         displayMoviesSlides()
         showCurrentMovieTittle()
+        myFunction(window.matchMedia("(max-width: 700px)"))
         spoilerText.style.display = 'none'
     })
 
@@ -88,6 +89,7 @@ $.getJSON( 'js/movies.json', (movies) => {
         ulSliderList.innerHTML = ''
         displayMoviesSlides()
         showCurrentMovieTittle()
+        myFunction(window.matchMedia("(max-width: 700px)"))
         spoilerText.style.display = 'none'        
     })
 
@@ -95,5 +97,30 @@ $.getJSON( 'js/movies.json', (movies) => {
     displayMoviesSlides()
     showSpoiler()
     showCurrentMovieTittle()
+
+
+
+    function myFunction(x) {
+        let li = document.querySelectorAll('li')
+        if (x.matches) { // If media query matches
+            li[0].style.display = 'none'
+            li[2].style.display = 'none'
+            prevBtn.style.left = '10px'
+            nextBtn.style.right = '10px'
+            spoilerText.style.width = '85%'
+            spoilerText.style.marginBottom = '10px'
+
+        } else {
+            li[0].style.display = 'flex'
+            li[2].style.display = 'flex'
+            prevBtn.style.left = '100px'
+            nextBtn.style.right = '100px'
+            spoilerText.style.width = '65%'
+        }
+    }
+      
+
+    myFunction(window.matchMedia("(max-width: 700px)")) // Call listener function at run time
+    window.matchMedia("(max-width: 700px)").addListener(myFunction) // Attach listener function on state changes
 })
 

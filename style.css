@@ -8,7 +8,6 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(rgb(7, 7, 7),rgb(15, 21, 32), rgb(7, 7, 7));
-    background-repeat: no-repeat;
 }
 
 #title-page {
@@ -114,6 +113,10 @@
 #current-movie {
     color: #eb9423;
     margin-left: 5px;
+}
+
+#h3-spoiler {
+    text-align: center;
 }
 
 #btn-spoiler {
